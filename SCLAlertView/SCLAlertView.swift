@@ -379,8 +379,9 @@ public class SCLAlertView: UIViewController {
         }
 
         // Done button
-        let txt = completeText != nil ? completeText! : "Done"
-        addButton(txt, target:self, selector:Selector("hideView"))
+        if let txt = completeText {
+            addButton(txt, target:self, selector:Selector("hideView"))
+        }
 
         // Alert view colour and images
         self.circleView.backgroundColor = viewColor
