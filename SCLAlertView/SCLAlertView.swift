@@ -287,40 +287,40 @@ public class SCLAlertView: UIViewController {
 
     // showSuccess(view, title, subTitle)
     public func showSuccess(title: String, subTitle: String, closeButtonTitle:String?=nil, duration:NSTimeInterval=0.0) -> SCLAlertViewResponder {
-        return showTitle(title, subTitle: subTitle, duration: duration, completeText:closeButtonTitle, style: .Success)
+        return showTitle(title, subTitle: subTitle, duration: duration, style: .Success)
     }
 
     // showError(view, title, subTitle)
     public func showError(title: String, subTitle: String, closeButtonTitle:String?=nil, duration:NSTimeInterval=0.0) -> SCLAlertViewResponder {
-        return showTitle(title, subTitle: subTitle, duration: duration, completeText:closeButtonTitle, style: .Error)
+        return showTitle(title, subTitle: subTitle, duration: duration, style: .Error)
     }
 
     // showNotice(view, title, subTitle)
     public func showNotice(title: String, subTitle: String, closeButtonTitle:String?=nil, duration:NSTimeInterval=0.0) -> SCLAlertViewResponder {
-        return showTitle(title, subTitle: subTitle, duration: duration, completeText:closeButtonTitle, style: .Notice)
+        return showTitle(title, subTitle: subTitle, duration: duration, style: .Notice)
     }
 
     // showWarning(view, title, subTitle)
     public func showWarning(title: String, subTitle: String, closeButtonTitle:String?=nil, duration:NSTimeInterval=0.0) -> SCLAlertViewResponder {
-        return showTitle(title, subTitle: subTitle, duration: duration, completeText:closeButtonTitle, style: .Warning)
+        return showTitle(title, subTitle: subTitle, duration: duration, style: .Warning)
     }
 
     // showInfo(view, title, subTitle)
     public func showInfo(title: String, subTitle: String, closeButtonTitle:String?=nil, duration:NSTimeInterval=0.0) -> SCLAlertViewResponder {
-        return showTitle(title, subTitle: subTitle, duration: duration, completeText:closeButtonTitle, style: .Info)
+        return showTitle(title, subTitle: subTitle, duration: duration, style: .Info)
     }
 
     public func showEdit(title: String, subTitle: String, closeButtonTitle:String?=nil, duration:NSTimeInterval=0.0) -> SCLAlertViewResponder {
-        return showTitle(title, subTitle: subTitle, duration: duration, completeText:closeButtonTitle, style: .Edit)
+        return showTitle(title, subTitle: subTitle, duration: duration, style: .Edit)
     }
 
     // showTitle(view, title, subTitle, style)
     public func showTitle(title: String, subTitle: String, style: SCLAlertViewStyle, closeButtonTitle:String?=nil, duration:NSTimeInterval=0.0) -> SCLAlertViewResponder {
-        return showTitle(title, subTitle: subTitle, duration:duration, completeText:closeButtonTitle, style: style)
+        return showTitle(title, subTitle: subTitle, duration:duration, style: style)
     }
 
     // showTitle(view, title, subTitle, duration, style)
-    public func showTitle(title: String, subTitle: String, duration: NSTimeInterval?, completeText: String?, style: SCLAlertViewStyle) -> SCLAlertViewResponder {
+    public func showTitle(title: String, subTitle: String, duration: NSTimeInterval?, style: SCLAlertViewStyle) -> SCLAlertViewResponder {
         view.alpha = 0
         let rv = UIApplication.sharedApplication().keyWindow! as UIWindow
         rv.addSubview(view)
@@ -376,11 +376,6 @@ public class SCLAlertView: UIViewController {
                 kWindowHeight -= (kTextHeight - ht)
                 kTextHeight = ht
             }
-        }
-
-        // Done button
-        if let txt = completeText {
-            addButton(txt, target:self, selector:Selector("hideView"))
         }
 
         // Alert view colour and images
